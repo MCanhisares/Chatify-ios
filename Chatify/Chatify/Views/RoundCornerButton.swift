@@ -16,8 +16,6 @@ class RoundCornerButton: UIButton {
         self.clipsToBounds = true
         self.layer.cornerRadius = 5
         self.layer.borderWidth = 1
-    }
-    
-    //TODO IMPLEMENT ROUND CORNERS
+    }        
 
 }

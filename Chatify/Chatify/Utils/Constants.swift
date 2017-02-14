@@ -11,4 +11,11 @@ import Foundation
 // MARK: Segue Identifiers
 
 let kLoginToChatList = "loginToChatList"
+let kRegisterToChatList = "registerToChatList"
 let kChatListToDetails = "chatListToDetails"
+
+
+// MARK: Cell reuse identifiers
+
+let kChatListCellIdentifier = "chatListCell"
+let kChatDetailCellIdentifier = "chatDetailCell"

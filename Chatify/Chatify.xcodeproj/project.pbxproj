@@ -10,10 +10,15 @@
 		6CDDCBAF1E4EA2E9ECC7248A /* Pods_ChatifyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2405B115967C495620F6F7 /* Pods_ChatifyUITests.framework */; };
 		D5DC25F6E3009EDA41DC808C /* Pods_Chatify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD29D1E7CDA200E55267B66A /* Pods_Chatify.framework */; };
 		E1B5F97AB87F2080BE705906 /* Pods_ChatifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 729664A44CB9F2ABF1730C34 /* Pods_ChatifyTests.framework */; };
-		F76297541E4BF047005E617C /* ChatsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76297531E4BF047005E617C /* ChatsListViewController.swift */; };
+		F72BA8711E52B22C00EB5420 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BA8701E52B22C00EB5420 /* RegisterViewController.swift */; };
+		F72BA8731E52B4FE00EB5420 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BA8721E52B4FE00EB5420 /* LoginViewController.swift */; };
+		F72BA8761E52B67000EB5420 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BA8751E52B67000EB5420 /* Extensions.swift */; };
+		F72BA8791E52BDC700EB5420 /* ChatDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BA8781E52BDC700EB5420 /* ChatDetailViewController.swift */; };
+		F72BA87C1E52BE3400EB5420 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BA87B1E52BE3400EB5420 /* SettingsViewController.swift */; };
+		F72BA87E1E52BE9F00EB5420 /* ChatsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BA87D1E52BE9F00EB5420 /* ChatsListTableViewController.swift */; };
+		F72BA8811E52C2DB00EB5420 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BA8801E52C2DB00EB5420 /* FirebaseService.swift */; };
 		F76297571E4BF24D005E617C /* RoundCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76297561E4BF24D005E617C /* RoundCornerButton.swift */; };
 		F762975A1E4BF2E9005E617C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76297581E4BF2E9005E617C /* Login.storyboard */; };
-		F762975C1E4BF95B005E617C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F762975B1E4BF95B005E617C /* LoginViewController.swift */; };
 		F76297611E4BFB62005E617C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F762975D1E4BFB62005E617C /* Alamofire.framework */; };
 		F76297621E4BFB62005E617C /* GoogleToolboxForMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F762975E1E4BFB62005E617C /* GoogleToolboxForMac.framework */; };
 		F76297631E4BFB62005E617C /* Pods_ChatifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F762975F1E4BFB62005E617C /* Pods_ChatifyTests.framework */; };
@@ -57,15 +62,21 @@
 		9B2405B115967C495620F6F7 /* Pods_ChatifyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatifyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEBBB6FE8C3237CF217590F9 /* Pods-ChatifyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatifyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatifyUITests/Pods-ChatifyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CD29D1E7CDA200E55267B66A /* Pods_Chatify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chatify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F76297531E4BF047005E617C /* ChatsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatsListViewController.swift; path = Controllers/ChatsListViewController.swift; sourceTree = "<group>"; };
+		F72BA8701E52B22C00EB5420 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = Controllers/Login/RegisterViewController.swift; sourceTree = "<group>"; };
+		F72BA8721E52B4FE00EB5420 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/Login/LoginViewController.swift; sourceTree = "<group>"; };
+		F72BA8751E52B67000EB5420 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Utils/Extensions.swift; sourceTree = "<group>"; };
+		F72BA8781E52BDC700EB5420 /* ChatDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatDetailViewController.swift; path = Controllers/Chat/ChatDetailViewController.swift; sourceTree = "<group>"; };
+		F72BA87B1E52BE3400EB5420 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Controllers/Settings/SettingsViewController.swift; sourceTree = "<group>"; };
+		F72BA87D1E52BE9F00EB5420 /* ChatsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatsListTableViewController.swift; path = Controllers/Chat/ChatsListTableViewController.swift; sourceTree = "<group>"; };
+		F72BA8801E52C2DB00EB5420 /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseService.swift; path = Services/FirebaseService.swift; sourceTree = "<group>"; };
 		F76297561E4BF24D005E617C /* RoundCornerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundCornerButton.swift; path = Views/RoundCornerButton.swift; sourceTree = "<group>"; };
 		F76297591E4BF2E9005E617C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
-		F762975B1E4BF95B005E617C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
 		F762975D1E4BFB62005E617C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Release-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		F762975E1E4BFB62005E617C /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleToolboxForMac.framework; path = "Pods/../build/Release-iphoneos/GoogleToolboxForMac/GoogleToolboxForMac.framework"; sourceTree = "<group>"; };
 		F762975F1E4BFB62005E617C /* Pods_ChatifyTests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_ChatifyTests.framework; path = "Pods/../build/Debug-iphoneos/Pods_ChatifyTests.framework"; sourceTree = "<group>"; };
 		F76297601E4BFB62005E617C /* Pods_ChatifyUITests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_ChatifyUITests.framework; path = "Pods/../build/Debug-iphoneos/Pods_ChatifyUITests.framework"; sourceTree = "<group>"; };
 		F76297661E4C0300005E617C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utils/Constants.swift; sourceTree = "<group>"; };
+		F76297681E52A7C7005E617C /* Chatify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Chatify.entitlements; sourceTree = "<group>"; };
 		F763D5791E4BEF0F002BBC77 /* Bariol_Regular_Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Bariol_Regular_Italic.otf; path = Resources/Fonts/Bariol_Regular_Italic.otf; sourceTree = "<group>"; };
 		F763D57A1E4BEF0F002BBC77 /* Bariol_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Bariol_Regular.otf; path = Resources/Fonts/Bariol_Regular.otf; sourceTree = "<group>"; };
 		F7CC70C81E4BDB760009DFC8 /* Chatify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chatify.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +139,40 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F72BA86D1E52ADC900EB5420 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F72BA8721E52B4FE00EB5420 /* LoginViewController.swift */,
+				F72BA8701E52B22C00EB5420 /* RegisterViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		F72BA8771E52BD4A00EB5420 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				F72BA87D1E52BE9F00EB5420 /* ChatsListTableViewController.swift */,
+				F72BA8781E52BDC700EB5420 /* ChatDetailViewController.swift */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
+		F72BA87A1E52BE1B00EB5420 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F72BA87B1E52BE3400EB5420 /* SettingsViewController.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		F72BA87F1E52C2A900EB5420 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F72BA8801E52C2DB00EB5420 /* FirebaseService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		F74E67C9C74412BAFB0C2977 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				F76297661E4C0300005E617C /* Constants.swift */,
+				F72BA8751E52B67000EB5420 /* Extensions.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -163,8 +209,9 @@
 		F763D5741E4BE309002BBC77 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F76297531E4BF047005E617C /* ChatsListViewController.swift */,
-				F762975B1E4BF95B005E617C /* LoginViewController.swift */,
+				F72BA87A1E52BE1B00EB5420 /* Settings */,
+				F72BA8771E52BD4A00EB5420 /* Chat */,
+				F72BA86D1E52ADC900EB5420 /* Login */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -227,7 +274,9 @@
 		F7CC70CA1E4BDB760009DFC8 /* Chatify */ = {
 			isa = PBXGroup;
 			children = (
+				F76297681E52A7C7005E617C /* Chatify.entitlements */,
 				F76297651E4C02F0005E617C /* Utils */,
+				F72BA87F1E52C2A900EB5420 /* Services */,
 				F76297551E4BF07B005E617C /* Layouts */,
 				F763D5771E4BE33F002BBC77 /* Resources */,
 				F763D5761E4BE320002BBC77 /* Views */,
@@ -335,7 +384,13 @@
 				TargetAttributes = {
 					F7CC70C71E4BDB750009DFC8 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 3WZA94Y787;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					F7CC70DB1E4BDB760009DFC8 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -543,11 +598,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F72BA8731E52B4FE00EB5420 /* LoginViewController.swift in Sources */,
 				F76297671E4C0300005E617C /* Constants.swift in Sources */,
-				F762975C1E4BF95B005E617C /* LoginViewController.swift in Sources */,
 				F76297571E4BF24D005E617C /* RoundCornerButton.swift in Sources */,
-				F76297541E4BF047005E617C /* ChatsListViewController.swift in Sources */,
+				F72BA8791E52BDC700EB5420 /* ChatDetailViewController.swift in Sources */,
+				F72BA8711E52B22C00EB5420 /* RegisterViewController.swift in Sources */,
+				F72BA87E1E52BE9F00EB5420 /* ChatsListTableViewController.swift in Sources */,
+				F72BA8811E52C2DB00EB5420 /* FirebaseService.swift in Sources */,
 				F7CC70CC1E4BDB760009DFC8 /* AppDelegate.swift in Sources */,
+				F72BA8761E52B67000EB5420 /* Extensions.swift in Sources */,
+				F72BA87C1E52BE3400EB5420 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,6 +768,8 @@
 			baseConfigurationReference = 4D0F0FD5FC3B924D2B26E917 /* Pods-Chatify.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Chatify/Chatify.entitlements;
+				DEVELOPMENT_TEAM = 3WZA94Y787;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Release-iphoneos/Alamofire",
@@ -729,6 +791,8 @@
 			baseConfigurationReference = 8862AD4794A585B978F31436 /* Pods-Chatify.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Chatify/Chatify.entitlements;
+				DEVELOPMENT_TEAM = 3WZA94Y787;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Release-iphoneos/Alamofire",
