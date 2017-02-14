@@ -8,10 +8,9 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
-
+class RegisterViewController: AdjustableKeyboardViewController {
     
-    // MARK: Segue Identifiers
+    // MARK: Outlets
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -20,13 +19,7 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.hideKeyboardWhenTappedAround()
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.usernameTextField.becomeFirstResponder()
     }
     
     @IBAction func btnRegisterTouchUpInside(_ sender: Any) {

@@ -9,23 +9,17 @@
 import UIKit
 import FirebaseAuth
 
-class LoginViewController: UIViewController {
+class LoginViewController: AdjustableKeyboardViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.hideKeyboardWhenTappedAround()
-        // Do any additional setup after loading the view.
+        
+        self.emailTextField.becomeFirstResponder()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+        
     @IBAction func loginBtnTouchUpInside(_ sender: Any) {
 //        if let email = emailTextField.text, let password = passwordTextField.text, email.characters.count > 0, password.characters.count > 0 {
         let email = "test1@gmail.com"
