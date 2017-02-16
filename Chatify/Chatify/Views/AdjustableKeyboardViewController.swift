@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol AdjustableKeyboardProtocol {
+    var originalBottomHeight : CGFloat {get}
+}
+
 class AdjustableKeyboardViewController: UIViewController {
 
     @IBOutlet weak var bottomLayoutGuideConstraint: NSLayoutConstraint!
+    
+    var adjustProtocol: AdjustableKeyboardProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,11 +48,11 @@ class AdjustableKeyboardViewController: UIViewController {
     func keyboardWillShowNotification(_ notification: Notification) {
         let keyboardEndFrame = ((notification as NSNotification).userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         let convertedKeyboardEndFrame = view.convert(keyboardEndFrame, from: view.window)
-        bottomLayoutGuideConstraint.constant = view.bounds.maxY - convertedKeyboardEndFrame.minY
+        bottomLayoutGuideConstraint.constant = view.bounds.maxY - convertedKeyboardEndFrame.minY + 15.0
     }
     
     func keyboardWillHideNotification(_ notification: Notification) {
-        bottomLayoutGuideConstraint.constant = 150
+        bottomLayoutGuideConstraint.constant = adjustProtocol!.originalBottomHeight
     }
 
 }

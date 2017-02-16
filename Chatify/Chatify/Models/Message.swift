@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Post: NSObject {
+class Message: NSObject {
     var username: String
     var text: String
     var toId: String

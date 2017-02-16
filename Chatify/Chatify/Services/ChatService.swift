@@ -12,25 +12,36 @@ import Firebase
 import FirebaseDatabase
 
 class ChatService: NSObject {
-    static var posts = [Post]()
+    static var Messages = [Message]()
     
-    static func fillPosts(uid: String, toId: String, completion: @escaping(_ result:String) -> Void) {
-        let allPosts = FirebaseService.databaseInstance.child("Posts")
-        print(allPosts)
+    static func FillMessages(uid: String, toId: String, completion: @escaping () -> Void) {
+        let allMessages = FirebaseService.DatabaseInstance.child("messages")
+        print(allMessages)
         
-        let post = allPosts.queryOrdered(byChild: "uid").queryEqual(toValue: FirebaseService.currentUser?.uid).observe(.childAdded, with: { snapshot in
-            print(snapshot)
-        })
-        
-        let _ = allPosts.queryOrdered(byChild: "uid").queryEqual(toValue: FirebaseService.currentUser?.uid).observe(.childAdded, with: { snapshot in
+        FirebaseService.DatabaseInstance.child("messages").queryOrdered(byChild: "uid").queryEqual(toValue: FirebaseService.CurrentUser?.uid).observe(.childAdded, with: { snapshot in
             print(snapshot)
             if let result = snapshot.value as? [String: AnyObject] {
                 let toIdResponse = result["toId"] as! String
                 if toIdResponse == toId {
-                    let post = Post(username: result["username"] as! String, text: result["text"] as! String, toId: result["toId"] as! String)
-                    ChatService.posts.append(post)
+                    
+                    let message = Message(username: result["username"] as! String, text: result["text"] as! String, toId: result["toId"] as! String)
+                    
+                    ChatService.Messages.append(message)
                 }
             }
+            completion()
         })
+    }
+    
+    static func AddMessage(text: String, toId: String) {
+        let uid = FirebaseService.CurrentUser!.uid
+        let username = FirebaseService.CurrentUser!.userName
+        
+        let post = ["uid": uid,
+                    "username" : username,
+                    "text" : text,
+                    "toId" : toId]
+        
+        FirebaseService.DatabaseInstance.child("messages").childByAutoId().setValue(post)
     }
 }
