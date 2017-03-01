@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="n4o-ld-yYk">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Bariol_Regular.otf">
+            <string>Bariol</string>
+        </array>
+        <array key="Bariol_Regular_Italic.otf">
+            <string>Bariol-Italic</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="xPk-AT-hsb">
+            <objects>
+                <viewController id="qRh-Z1-80h" customClass="LoginViewController" customModule="Chatify" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1P7-FG-Bv9"/>
+                        <viewControllerLayoutGuide type="bottom" id="eEx-Tr-cHO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aP2-wg-cFf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="0q9-fl-jj6">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="vCa-Ka-0fU">
+                                <rect key="frame" x="107.5" y="70" width="105.5" height="37"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lsp-bi-yvj">
+                                        <rect key="frame" x="0.0" y="0.0" width="69.5" height="37"/>
+                                        <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="37"/>
+                                        <color key="textColor" red="0.30803414801670975" green="0.65759835025380708" blue="0.64906012378915001" alpha="0.98108411815068497" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ify" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdS-1l-k34">
+                                        <rect key="frame" x="69.5" y="0.0" width="36" height="37"/>
+                                        <fontDescription key="fontDescription" name="Bariol-Italic" family="Bariol" pointSize="37"/>
+                                        <color key="textColor" red="0.75049571700507611" green="0.74789434146220479" blue="0.74009021483359083" alpha="0.98108411815068497" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j25-a9-rQb">
+                                <rect key="frame" x="60" y="190" width="200" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sei-gr-l6Z">
+                                <rect key="frame" x="60" y="142" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="YEI-Xd-Ccr"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i79-Po-eWz" customClass="RoundCornerButton" customModule="Chatify" customModuleProvider="target">
+                                <rect key="frame" x="50.5" y="262" width="219" height="50"/>
+                                <color key="backgroundColor" red="0.11892815550630929" green="0.26379387738234855" blue="0.42611833756345174" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="219" id="hTa-rA-njV"/>
+                                    <constraint firstAttribute="height" constant="50" id="run-Tg-8xN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="17"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.72411533859999999" green="0.77349715379999995" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginBtnTouchUpInside:" destination="qRh-Z1-80h" eventType="touchUpInside" id="4c4-dc-hWG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0q9-fl-jj6" firstAttribute="top" secondItem="aP2-wg-cFf" secondAttribute="top" id="0xY-gi-T5J"/>
+                            <constraint firstItem="i79-Po-eWz" firstAttribute="centerX" secondItem="aP2-wg-cFf" secondAttribute="centerX" id="25f-JK-kb1"/>
+                            <constraint firstItem="0q9-fl-jj6" firstAttribute="leading" secondItem="aP2-wg-cFf" secondAttribute="leading" id="3aU-Bk-9VG"/>
+                            <constraint firstItem="Sei-gr-l6Z" firstAttribute="centerX" secondItem="aP2-wg-cFf" secondAttribute="centerX" id="71E-ee-skU"/>
+                            <constraint firstItem="j25-a9-rQb" firstAttribute="width" secondItem="Sei-gr-l6Z" secondAttribute="width" id="9Kt-gf-Eht"/>
+                            <constraint firstItem="j25-a9-rQb" firstAttribute="centerX" secondItem="aP2-wg-cFf" secondAttribute="centerX" id="AmU-Rl-b25"/>
+                            <constraint firstItem="Sei-gr-l6Z" firstAttribute="top" secondItem="vCa-Ka-0fU" secondAttribute="bottom" constant="35" id="QES-Ka-pgb"/>
+                            <constraint firstItem="vCa-Ka-0fU" firstAttribute="top" secondItem="1P7-FG-Bv9" secondAttribute="bottom" constant="50" id="X6G-0v-Rg5"/>
+                            <constraint firstItem="eEx-Tr-cHO" firstAttribute="top" secondItem="0q9-fl-jj6" secondAttribute="bottom" id="YeD-Lc-N3B"/>
+                            <constraint firstItem="j25-a9-rQb" firstAttribute="top" secondItem="Sei-gr-l6Z" secondAttribute="bottom" constant="18" id="af1-Uj-2ly"/>
+                            <constraint firstAttribute="trailing" secondItem="0q9-fl-jj6" secondAttribute="trailing" id="cnb-v2-tBP"/>
+                            <constraint firstItem="vCa-Ka-0fU" firstAttribute="centerX" secondItem="aP2-wg-cFf" secondAttribute="centerX" id="gOV-hm-Iwh"/>
+                            <constraint firstItem="i79-Po-eWz" firstAttribute="top" secondItem="j25-a9-rQb" secondAttribute="bottom" constant="42" id="wfA-Z0-j9y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="Sei-gr-l6Z" id="W24-xu-dDa"/>
+                        <outlet property="passwordTextField" destination="j25-a9-rQb" id="ZAQ-PR-4ZY"/>
+                        <segue destination="wwS-lb-S6f" kind="presentation" identifier="loginToChatList" id="T8m-ah-2Vb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rBo-K3-249" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="352.80000000000001" y="8.5457271364317844"/>
+        </scene>
+        <!--SplashViewController-->
+        <scene sceneID="MrD-4c-SMb">
+            <objects>
+                <viewController title="SplashViewController" id="n4o-ld-yYk" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vfK-yl-ppA"/>
+                        <viewControllerLayoutGuide type="bottom" id="reJ-xg-ibB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7aa-4H-JEI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="EMn-jd-NYz">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFW-7w-hU9" customClass="RoundCornerButton" customModule="Chatify" customModuleProvider="target">
+                                <rect key="frame" x="30" y="348.5" width="120" height="50"/>
+                                <color key="backgroundColor" red="0.45326377699526527" green="0.47795307195466058" blue="0.7419933344530707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="Jgf-kq-mCK"/>
+                                    <constraint firstAttribute="height" constant="50" id="aZy-jr-b12"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="17"/>
+                                <state key="normal" title="Sign In">
+                                    <color key="titleColor" red="0.92549019607843142" green="0.96078431372549022" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="qRh-Z1-80h" kind="presentation" identifier="splashToLogin" id="4O7-fk-1ZK"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="1wq-4Z-YNF">
+                                <rect key="frame" x="107.5" y="235.5" width="105.5" height="37"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfF-X2-db4">
+                                        <rect key="frame" x="0.0" y="0.0" width="69.5" height="37"/>
+                                        <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="37"/>
+                                        <color key="textColor" red="0.30803414800000001" green="0.65759835030000002" blue="0.6490601238" alpha="0.98108411819999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ify" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGe-7s-btF">
+                                        <rect key="frame" x="69.5" y="0.0" width="36" height="37"/>
+                                        <fontDescription key="fontDescription" name="Bariol-Italic" family="Bariol" pointSize="37"/>
+                                        <color key="textColor" red="0.99519230769230771" green="1" blue="0.99038461538461542" alpha="0.98108411819999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ieF-oD-NS4" customClass="RoundCornerButton" customModule="Chatify" customModuleProvider="target">
+                                <rect key="frame" x="170" y="348.5" width="120" height="50"/>
+                                <color key="backgroundColor" red="0.43227712835249282" green="0.73110738902159855" blue="0.58062485045394008" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="gXj-6S-Aej"/>
+                                    <constraint firstAttribute="height" constant="50" id="zL8-7P-YOS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="17"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" red="0.92226168224014604" green="0.96553222898769042" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginBtnTouchUpInside:" destination="qRh-Z1-80h" eventType="touchUpInside" id="hNR-yO-0vX"/>
+                                    <segue destination="PSJ-v8-wpk" kind="presentation" identifier="splashToRegister" id="GFf-dO-Yw7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="reJ-xg-ibB" firstAttribute="top" secondItem="EMn-jd-NYz" secondAttribute="bottom" id="2Gk-lh-krH"/>
+                            <constraint firstItem="ieF-oD-NS4" firstAttribute="top" secondItem="1wq-4Z-YNF" secondAttribute="bottom" constant="76" id="554-Jq-Q80"/>
+                            <constraint firstItem="1wq-4Z-YNF" firstAttribute="centerY" secondItem="7aa-4H-JEI" secondAttribute="centerY" constant="-30" id="Cvi-Le-9rV"/>
+                            <constraint firstItem="ieF-oD-NS4" firstAttribute="centerX" secondItem="7aa-4H-JEI" secondAttribute="centerX" constant="70" id="Ia9-mV-TkZ"/>
+                            <constraint firstAttribute="trailing" secondItem="EMn-jd-NYz" secondAttribute="trailing" id="QJV-li-WoG"/>
+                            <constraint firstItem="EMn-jd-NYz" firstAttribute="top" secondItem="7aa-4H-JEI" secondAttribute="top" id="Tpy-U3-Yex"/>
+                            <constraint firstItem="yFW-7w-hU9" firstAttribute="centerX" secondItem="7aa-4H-JEI" secondAttribute="centerX" constant="-70" id="UOB-KD-4Hx"/>
+                            <constraint firstItem="yFW-7w-hU9" firstAttribute="top" secondItem="1wq-4Z-YNF" secondAttribute="bottom" constant="76" id="f0Y-da-1lt"/>
+                            <constraint firstItem="EMn-jd-NYz" firstAttribute="leading" secondItem="7aa-4H-JEI" secondAttribute="leading" id="hjv-Lb-5lf"/>
+                            <constraint firstItem="1wq-4Z-YNF" firstAttribute="centerX" secondItem="7aa-4H-JEI" secondAttribute="centerX" id="kkg-Yz-DDf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Rr3-GW-19w"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h9b-ET-faX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-412" y="8.5457271364317844"/>
+        </scene>
+        <!--RegisterViewController-->
+        <scene sceneID="djJ-SE-0bh">
+            <objects>
+                <viewController title="RegisterViewController" id="PSJ-v8-wpk" customClass="RegisterViewController" customModule="Chatify" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h1i-dj-NvV"/>
+                        <viewControllerLayoutGuide type="bottom" id="wGF-zU-3wF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mJt-dB-uK8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="nBf-WQ-anE">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="YAO-Jy-bOo">
+                                <rect key="frame" x="107.5" y="50" width="105.5" height="37"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqu-O0-aVH">
+                                        <rect key="frame" x="0.0" y="0.0" width="69.5" height="37"/>
+                                        <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="37"/>
+                                        <color key="textColor" red="0.30803414800000001" green="0.65759835030000002" blue="0.6490601238" alpha="0.98108411819999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ify" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WzJ-yA-YJG">
+                                        <rect key="frame" x="69.5" y="0.0" width="36" height="37"/>
+                                        <fontDescription key="fontDescription" name="Bariol-Italic" family="Bariol" pointSize="37"/>
+                                        <color key="textColor" red="0.75049571699999995" green="0.7478943415" blue="0.74009021480000003" alpha="0.98108411819999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iK5-xW-zNy">
+                                <rect key="frame" x="60" y="122" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="ieC-hk-E5r"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3CE-R4-HU3">
+                                <rect key="frame" x="60" y="218" width="200" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xSL-Vb-0vn">
+                                <rect key="frame" x="60" y="170" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="A26-gj-IWd"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRH-xi-4G4" customClass="RoundCornerButton" customModule="Chatify" customModuleProvider="target">
+                                <rect key="frame" x="50.5" y="278" width="219" height="50"/>
+                                <color key="backgroundColor" red="0.11892815549999999" green="0.26379387739999999" blue="0.42611833760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="WtE-rf-Wry"/>
+                                    <constraint firstAttribute="width" constant="219" id="mXi-Zt-Nrb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="17"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" red="0.72411533859999999" green="0.77349715379999995" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnRegisterTouchUpInside:" destination="PSJ-v8-wpk" eventType="touchUpInside" id="bDu-Zv-R3d"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3CE-R4-HU3" firstAttribute="top" secondItem="xSL-Vb-0vn" secondAttribute="bottom" constant="18" id="DO4-M6-HJQ"/>
+                            <constraint firstItem="wRH-xi-4G4" firstAttribute="top" secondItem="3CE-R4-HU3" secondAttribute="bottom" constant="30" id="HNV-Mp-ofP"/>
+                            <constraint firstItem="YAO-Jy-bOo" firstAttribute="centerX" secondItem="mJt-dB-uK8" secondAttribute="centerX" id="Qvo-T8-zC6"/>
+                            <constraint firstItem="xSL-Vb-0vn" firstAttribute="centerX" secondItem="mJt-dB-uK8" secondAttribute="centerX" id="UJz-Ak-sUN"/>
+                            <constraint firstItem="nBf-WQ-anE" firstAttribute="leading" secondItem="mJt-dB-uK8" secondAttribute="leading" id="Xhi-c3-cGY"/>
+                            <constraint firstItem="3CE-R4-HU3" firstAttribute="width" secondItem="xSL-Vb-0vn" secondAttribute="width" id="Y18-Y3-Rqa"/>
+                            <constraint firstItem="iK5-xW-zNy" firstAttribute="centerX" secondItem="mJt-dB-uK8" secondAttribute="centerX" id="ZAw-0P-cjq"/>
+                            <constraint firstItem="wGF-zU-3wF" firstAttribute="top" secondItem="nBf-WQ-anE" secondAttribute="bottom" id="a5V-lT-ch1"/>
+                            <constraint firstItem="xSL-Vb-0vn" firstAttribute="top" secondItem="iK5-xW-zNy" secondAttribute="bottom" constant="18" id="dF5-Mk-T3F"/>
+                            <constraint firstItem="3CE-R4-HU3" firstAttribute="centerX" secondItem="mJt-dB-uK8" secondAttribute="centerX" id="pYk-jd-wf7"/>
+                            <constraint firstItem="iK5-xW-zNy" firstAttribute="top" secondItem="YAO-Jy-bOo" secondAttribute="bottom" constant="35" id="sfp-3Q-Exy"/>
+                            <constraint firstItem="nBf-WQ-anE" firstAttribute="top" secondItem="mJt-dB-uK8" secondAttribute="top" id="vy4-wI-ETf"/>
+                            <constraint firstItem="wRH-xi-4G4" firstAttribute="centerX" secondItem="mJt-dB-uK8" secondAttribute="centerX" id="yUS-tL-mbd"/>
+                            <constraint firstAttribute="trailing" secondItem="nBf-WQ-anE" secondAttribute="trailing" id="yyc-t8-ncK"/>
+                            <constraint firstItem="YAO-Jy-bOo" firstAttribute="top" secondItem="h1i-dj-NvV" secondAttribute="bottom" constant="30" id="zML-IC-1DE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="xSL-Vb-0vn" id="QPM-qz-rw6"/>
+                        <outlet property="passwordTextField" destination="3CE-R4-HU3" id="pNb-MJ-fWY"/>
+                        <outlet property="usernameTextField" destination="iK5-xW-zNy" id="aNp-4s-eDP"/>
+                        <segue destination="wwS-lb-S6f" kind="presentation" identifier="registerToChatList" id="ev8-gF-ZhD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lxM-6O-qT5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-412" y="747"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="LJY-IC-2YT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="wwS-lb-S6f" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sR1-A4-tEc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1094.4000000000001" y="-78.260869565217391"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg" width="640" height="1136"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="T8m-ah-2Vb"/>
+    </inferredMetricsTieBreakers>
+</document>
