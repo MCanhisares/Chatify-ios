@@ -8,10 +8,11 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: AdjustableKeyboardViewController, AdjustableKeyboardProtocol {
 
+    var originalBottomHeight: CGFloat = (UIScreen.main.bounds.height / 2) - 100.0
     
-    // MARK: Segue Identifiers
+    // MARK: Outlets
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -20,18 +21,31 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.hideKeyboardWhenTappedAround()
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        usernameTextField.becomeFirstResponder()
+        
+        adjustProtocol = self
     }
     
     @IBAction func btnRegisterTouchUpInside(_ sender: Any) {
         
-        self.performSegue(withIdentifier: kRegisterToChatList, sender: sender)
+        guard let email = emailTextField.text, email.characters.count > 0 else {
+            return 
+        }
+        
+        guard let password = passwordTextField.text, password.characters.count > 0 else {
+            return
+        }
+
+        guard let username = usernameTextField.text, username.characters.count > 0 else {
+            return
+        }
+        
+        FirebaseService.CreateAccount(email: email, password: password, username: username) { (success) in
+            if success {
+                self.performSegue(withIdentifier: kRegisterToChatList, sender: sender)
+            }
+        }
+        
     }
 
     /*

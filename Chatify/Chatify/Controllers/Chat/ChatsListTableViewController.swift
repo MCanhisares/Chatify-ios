@@ -9,20 +9,19 @@
 import UIKit
 
 class ChatsListTableViewController: UITableViewController {
-
+    
+    var selectedUser: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.fillUsers()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func fillUsers() {
+        ProfileService.FillUsers {
+            self.tableView.reloadData()
+        }
     }
 
     // MARK: - Table view data source
@@ -34,18 +33,26 @@ class ChatsListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return ProfileService.Users.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: kChatListCellIdentifier, for: indexPath)
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: kChatListCellIdentifier, for: indexPath) as! ChatListTableViewCell
         
-        cell.textLabel?.text = "text"
+        let user = ProfileService.Users[indexPath.row]
+        
+        cell.profileName.text = user.userName
+        cell.profileImage.image = user.getProfileImage()                
+        
         // Configure the cell...
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedUser = ProfileService.Users[indexPath.row]
+        self.performSegue(withIdentifier: kChatListToDetails, sender: self)
     }
    
 
@@ -84,14 +91,17 @@ class ChatsListTableViewController: UITableViewController {
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == kChatListToDetails, let destinationViewController = segue.destination as? ChatDetailViewController {
+            destinationViewController.selectedUser = self.selectedUser
+        } else if segue.identifier == kChatListToSettings, let destinationViewController = segue.destination as? SettingsViewController {
+            
+        }
+        
     }
-    */
 
 }

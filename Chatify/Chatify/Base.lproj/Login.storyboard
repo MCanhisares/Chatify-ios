@@ -32,7 +32,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="vCa-Ka-0fU">
-                                <rect key="frame" x="107.5" y="70" width="105.5" height="37"/>
+                                <rect key="frame" x="107.5" y="143" width="105.5" height="37"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lsp-bi-yvj">
                                         <rect key="frame" x="0.0" y="0.0" width="69.5" height="37"/>
@@ -49,22 +49,22 @@
                                 </subviews>
                             </stackView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j25-a9-rQb">
-                                <rect key="frame" x="60" y="190" width="200" height="30"/>
+                                <rect key="frame" x="60" y="288" width="200" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sei-gr-l6Z">
-                                <rect key="frame" x="60" y="142" width="200" height="30"/>
+                                <rect key="frame" x="60" y="240" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="YEI-Xd-Ccr"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i79-Po-eWz" customClass="RoundCornerButton" customModule="Chatify" customModuleProvider="target">
-                                <rect key="frame" x="50.5" y="262" width="219" height="50"/>
+                                <rect key="frame" x="50.5" y="368" width="219" height="50"/>
                                 <color key="backgroundColor" red="0.11892815550630929" green="0.26379387738234855" blue="0.42611833756345174" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="219" id="hTa-rA-njV"/>
@@ -86,17 +86,18 @@
                             <constraint firstItem="0q9-fl-jj6" firstAttribute="leading" secondItem="aP2-wg-cFf" secondAttribute="leading" id="3aU-Bk-9VG"/>
                             <constraint firstItem="Sei-gr-l6Z" firstAttribute="centerX" secondItem="aP2-wg-cFf" secondAttribute="centerX" id="71E-ee-skU"/>
                             <constraint firstItem="j25-a9-rQb" firstAttribute="width" secondItem="Sei-gr-l6Z" secondAttribute="width" id="9Kt-gf-Eht"/>
+                            <constraint firstItem="Sei-gr-l6Z" firstAttribute="top" secondItem="vCa-Ka-0fU" secondAttribute="bottom" constant="60" id="9zh-Ph-9ay"/>
                             <constraint firstItem="j25-a9-rQb" firstAttribute="centerX" secondItem="aP2-wg-cFf" secondAttribute="centerX" id="AmU-Rl-b25"/>
-                            <constraint firstItem="Sei-gr-l6Z" firstAttribute="top" secondItem="vCa-Ka-0fU" secondAttribute="bottom" constant="35" id="QES-Ka-pgb"/>
-                            <constraint firstItem="vCa-Ka-0fU" firstAttribute="top" secondItem="1P7-FG-Bv9" secondAttribute="bottom" constant="50" id="X6G-0v-Rg5"/>
                             <constraint firstItem="eEx-Tr-cHO" firstAttribute="top" secondItem="0q9-fl-jj6" secondAttribute="bottom" id="YeD-Lc-N3B"/>
                             <constraint firstItem="j25-a9-rQb" firstAttribute="top" secondItem="Sei-gr-l6Z" secondAttribute="bottom" constant="18" id="af1-Uj-2ly"/>
                             <constraint firstAttribute="trailing" secondItem="0q9-fl-jj6" secondAttribute="trailing" id="cnb-v2-tBP"/>
                             <constraint firstItem="vCa-Ka-0fU" firstAttribute="centerX" secondItem="aP2-wg-cFf" secondAttribute="centerX" id="gOV-hm-Iwh"/>
-                            <constraint firstItem="i79-Po-eWz" firstAttribute="top" secondItem="j25-a9-rQb" secondAttribute="bottom" constant="42" id="wfA-Z0-j9y"/>
+                            <constraint firstItem="eEx-Tr-cHO" firstAttribute="top" secondItem="i79-Po-eWz" secondAttribute="bottom" constant="150" id="gzm-B3-gsS"/>
+                            <constraint firstItem="i79-Po-eWz" firstAttribute="top" secondItem="j25-a9-rQb" secondAttribute="bottom" constant="50" id="wfA-Z0-j9y"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomLayoutGuideConstraint" destination="gzm-B3-gsS" id="NDt-Yz-n3F"/>
                         <outlet property="emailTextField" destination="Sei-gr-l6Z" id="W24-xu-dDa"/>
                         <outlet property="passwordTextField" destination="j25-a9-rQb" id="ZAQ-PR-4ZY"/>
                         <segue destination="wwS-lb-S6f" kind="presentation" identifier="loginToChatList" id="T8m-ah-2Vb"/>
@@ -122,7 +123,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFW-7w-hU9" customClass="RoundCornerButton" customModule="Chatify" customModuleProvider="target">
-                                <rect key="frame" x="30" y="348.5" width="120" height="50"/>
+                                <rect key="frame" x="30" y="349" width="120" height="50"/>
                                 <color key="backgroundColor" red="0.45326377699526527" green="0.47795307195466058" blue="0.7419933344530707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="Jgf-kq-mCK"/>
@@ -137,7 +138,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="1wq-4Z-YNF">
-                                <rect key="frame" x="107.5" y="235.5" width="105.5" height="37"/>
+                                <rect key="frame" x="108" y="236" width="105.5" height="37"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfF-X2-db4">
                                         <rect key="frame" x="0.0" y="0.0" width="69.5" height="37"/>
@@ -154,7 +155,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ieF-oD-NS4" customClass="RoundCornerButton" customModule="Chatify" customModuleProvider="target">
-                                <rect key="frame" x="170" y="348.5" width="120" height="50"/>
+                                <rect key="frame" x="170" y="349" width="120" height="50"/>
                                 <color key="backgroundColor" red="0.43227712835249282" green="0.73110738902159855" blue="0.58062485045394008" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="gXj-6S-Aej"/>
@@ -206,7 +207,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="YAO-Jy-bOo">
-                                <rect key="frame" x="107.5" y="50" width="105.5" height="37"/>
+                                <rect key="frame" x="107.5" y="135" width="105.5" height="37"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqu-O0-aVH">
                                         <rect key="frame" x="0.0" y="0.0" width="69.5" height="37"/>
@@ -223,31 +224,31 @@
                                 </subviews>
                             </stackView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iK5-xW-zNy">
-                                <rect key="frame" x="60" y="122" width="200" height="30"/>
+                                <rect key="frame" x="60" y="212" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="ieC-hk-E5r"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3CE-R4-HU3">
-                                <rect key="frame" x="60" y="218" width="200" height="30"/>
+                                <rect key="frame" x="60" y="308" width="200" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xSL-Vb-0vn">
-                                <rect key="frame" x="60" y="170" width="200" height="30"/>
+                                <rect key="frame" x="60" y="260" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="A26-gj-IWd"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRH-xi-4G4" customClass="RoundCornerButton" customModule="Chatify" customModuleProvider="target">
-                                <rect key="frame" x="50.5" y="278" width="219" height="50"/>
+                                <rect key="frame" x="50.5" y="388" width="219" height="50"/>
                                 <color key="backgroundColor" red="0.11892815549999999" green="0.26379387739999999" blue="0.42611833760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="WtE-rf-Wry"/>
@@ -265,7 +266,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3CE-R4-HU3" firstAttribute="top" secondItem="xSL-Vb-0vn" secondAttribute="bottom" constant="18" id="DO4-M6-HJQ"/>
-                            <constraint firstItem="wRH-xi-4G4" firstAttribute="top" secondItem="3CE-R4-HU3" secondAttribute="bottom" constant="30" id="HNV-Mp-ofP"/>
+                            <constraint firstItem="wRH-xi-4G4" firstAttribute="top" secondItem="3CE-R4-HU3" secondAttribute="bottom" constant="50" id="HNV-Mp-ofP"/>
+                            <constraint firstItem="wGF-zU-3wF" firstAttribute="top" secondItem="wRH-xi-4G4" secondAttribute="bottom" constant="130" id="Pmo-i2-o1w"/>
                             <constraint firstItem="YAO-Jy-bOo" firstAttribute="centerX" secondItem="mJt-dB-uK8" secondAttribute="centerX" id="Qvo-T8-zC6"/>
                             <constraint firstItem="xSL-Vb-0vn" firstAttribute="centerX" secondItem="mJt-dB-uK8" secondAttribute="centerX" id="UJz-Ak-sUN"/>
                             <constraint firstItem="nBf-WQ-anE" firstAttribute="leading" secondItem="mJt-dB-uK8" secondAttribute="leading" id="Xhi-c3-cGY"/>
@@ -273,15 +275,15 @@
                             <constraint firstItem="iK5-xW-zNy" firstAttribute="centerX" secondItem="mJt-dB-uK8" secondAttribute="centerX" id="ZAw-0P-cjq"/>
                             <constraint firstItem="wGF-zU-3wF" firstAttribute="top" secondItem="nBf-WQ-anE" secondAttribute="bottom" id="a5V-lT-ch1"/>
                             <constraint firstItem="xSL-Vb-0vn" firstAttribute="top" secondItem="iK5-xW-zNy" secondAttribute="bottom" constant="18" id="dF5-Mk-T3F"/>
+                            <constraint firstItem="iK5-xW-zNy" firstAttribute="top" secondItem="YAO-Jy-bOo" secondAttribute="bottom" constant="40" id="fDX-gk-QIq"/>
                             <constraint firstItem="3CE-R4-HU3" firstAttribute="centerX" secondItem="mJt-dB-uK8" secondAttribute="centerX" id="pYk-jd-wf7"/>
-                            <constraint firstItem="iK5-xW-zNy" firstAttribute="top" secondItem="YAO-Jy-bOo" secondAttribute="bottom" constant="35" id="sfp-3Q-Exy"/>
                             <constraint firstItem="nBf-WQ-anE" firstAttribute="top" secondItem="mJt-dB-uK8" secondAttribute="top" id="vy4-wI-ETf"/>
                             <constraint firstItem="wRH-xi-4G4" firstAttribute="centerX" secondItem="mJt-dB-uK8" secondAttribute="centerX" id="yUS-tL-mbd"/>
                             <constraint firstAttribute="trailing" secondItem="nBf-WQ-anE" secondAttribute="trailing" id="yyc-t8-ncK"/>
-                            <constraint firstItem="YAO-Jy-bOo" firstAttribute="top" secondItem="h1i-dj-NvV" secondAttribute="bottom" constant="30" id="zML-IC-1DE"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomLayoutGuideConstraint" destination="Pmo-i2-o1w" id="sRO-sq-g1p"/>
                         <outlet property="emailTextField" destination="xSL-Vb-0vn" id="QPM-qz-rw6"/>
                         <outlet property="passwordTextField" destination="3CE-R4-HU3" id="pNb-MJ-fWY"/>
                         <outlet property="usernameTextField" destination="iK5-xW-zNy" id="aNp-4s-eDP"/>
@@ -305,6 +307,6 @@
         <image name="bg" width="640" height="1136"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="T8m-ah-2Vb"/>
+        <segue reference="ev8-gF-ZhD"/>
     </inferredMetricsTieBreakers>
 </document>

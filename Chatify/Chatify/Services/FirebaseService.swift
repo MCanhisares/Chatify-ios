@@ -13,9 +13,8 @@ import FirebaseAuth
 
 class FirebaseService: NSObject {
     
-    static let databaseInstance = FIRDatabase.database().reference()
-    static var currentUserId: String = ""
-    static var currentUser: FIRUser? = nil
+    static let DatabaseInstance = FIRDatabase.database().reference()
+    static var CurrentUser: User? = nil
     
     static func Login(email: String, password: String, completion: @escaping (_ success: Bool) -> Void) {
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { user, error in
@@ -23,12 +22,36 @@ class FirebaseService: NSObject {
                 print(err.localizedDescription)
                 completion(false)
             } else {
-                self.currentUser = user
-                self.currentUserId = (user?.uid)!
-                completion(true)
+                print(user)
+                ProfileService.GetUser(uid: user!.uid, completion: { user in
+                    FirebaseService.CurrentUser = user
+                    
+                    completion(true)
+                })
             }
         })
     }
     
+    static func CreateAccount(email: String, password: String, username: String, completion: @escaping (_ success: Bool) -> Void) {
+        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
+            if error != nil {
+                print(error?.localizedDescription)
+                completion(false)
+                return
+            }
+            
+            ProfileService.AddUser(username: username, email: email)
+            
+            FirebaseService.Login(email: email, password: password, completion: { (success) in
+                if success {
+                    print("Login successful")
+                } else {
+                    print("Login unsuccessful")
+                }
+                
+                completion(success)
+            })
+        })
+    }        
 
 }

@@ -8,11 +8,14 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
+    @IBOutlet weak var profileImgView: RoundedImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        getCurrentProfilePicture()
         // Do any additional setup after loading the view.
     }
 
@@ -21,6 +24,32 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func getPhtoTouchUpInside(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func uploadPhotoTouchUpInside(_ sender: Any) {
+        guard let image = profileImgView.image else {
+            return
+        }
+        FirebaseService.CurrentUser?.uploadProfilePhoto(profileImage: image)
+    }
+    
+    func getCurrentProfilePicture() {
+        if let url = FirebaseService.CurrentUser?.profileImageUrl, url.characters.count > 0  {
+            profileImgView.image = FirebaseService.CurrentUser?.getProfileImage()
+        }
+     }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let pickerInfo = info as NSDictionary
+        let img: UIImage = pickerInfo.object(forKey: UIImagePickerControllerOriginalImage) as! UIImage
+        profileImgView.image = img
+        self.dismiss(animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

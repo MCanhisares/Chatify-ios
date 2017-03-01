@@ -13,9 +13,13 @@ import Foundation
 let kLoginToChatList = "loginToChatList"
 let kRegisterToChatList = "registerToChatList"
 let kChatListToDetails = "chatListToDetails"
+let kChatListToSettings = "chatListToSettings"
 
 
 // MARK: Cell reuse identifiers
 
 let kChatListCellIdentifier = "chatListCell"
 let kChatDetailCellIdentifier = "chatDetailCell"
+
+
+let kChatHasNewMessage = "chatHasNewMessage"

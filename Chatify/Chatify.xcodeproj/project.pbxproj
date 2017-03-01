@@ -17,6 +17,15 @@
 		F72BA87C1E52BE3400EB5420 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BA87B1E52BE3400EB5420 /* SettingsViewController.swift */; };
 		F72BA87E1E52BE9F00EB5420 /* ChatsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BA87D1E52BE9F00EB5420 /* ChatsListTableViewController.swift */; };
 		F72BA8811E52C2DB00EB5420 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BA8801E52C2DB00EB5420 /* FirebaseService.swift */; };
+		F72BA8831E52C6FE00EB5420 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BA8821E52C6FE00EB5420 /* ChatService.swift */; };
+		F72BA8851E52C75B00EB5420 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BA8841E52C75B00EB5420 /* Message.swift */; };
+		F72BA8871E52C9E800EB5420 /* AdjustableKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BA8861E52C9E800EB5420 /* AdjustableKeyboardViewController.swift */; };
+		F72BA88B1E551A8200EB5420 /* ChatDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BA88A1E551A8200EB5420 /* ChatDetailTableViewCell.swift */; };
+		F72BA88D1E551E1600EB5420 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BA88C1E551E1600EB5420 /* User.swift */; };
+		F72BA88F1E551F6100EB5420 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BA88E1E551F6100EB5420 /* ProfileService.swift */; };
+		F72BA8931E55473F00EB5420 /* ChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BA8921E55473F00EB5420 /* ChatListTableViewCell.swift */; };
+		F72BA8951E554BFC00EB5420 /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BA8941E554BFC00EB5420 /* RoundedImage.swift */; };
+		F72BA8971E554EAA00EB5420 /* RoundedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BA8961E554EAA00EB5420 /* RoundedTextView.swift */; };
 		F76297571E4BF24D005E617C /* RoundCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76297561E4BF24D005E617C /* RoundCornerButton.swift */; };
 		F762975A1E4BF2E9005E617C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76297581E4BF2E9005E617C /* Login.storyboard */; };
 		F76297611E4BFB62005E617C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F762975D1E4BFB62005E617C /* Alamofire.framework */; };
@@ -69,6 +78,15 @@
 		F72BA87B1E52BE3400EB5420 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Controllers/Settings/SettingsViewController.swift; sourceTree = "<group>"; };
 		F72BA87D1E52BE9F00EB5420 /* ChatsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatsListTableViewController.swift; path = Controllers/Chat/ChatsListTableViewController.swift; sourceTree = "<group>"; };
 		F72BA8801E52C2DB00EB5420 /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseService.swift; path = Services/FirebaseService.swift; sourceTree = "<group>"; };
+		F72BA8821E52C6FE00EB5420 /* ChatService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatService.swift; path = Services/ChatService.swift; sourceTree = "<group>"; };
+		F72BA8841E52C75B00EB5420 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Models/Message.swift; sourceTree = "<group>"; };
+		F72BA8861E52C9E800EB5420 /* AdjustableKeyboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdjustableKeyboardViewController.swift; path = Views/AdjustableKeyboardViewController.swift; sourceTree = "<group>"; };
+		F72BA88A1E551A8200EB5420 /* ChatDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatDetailTableViewCell.swift; path = Views/Chat/ChatDetailTableViewCell.swift; sourceTree = "<group>"; };
+		F72BA88C1E551E1600EB5420 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
+		F72BA88E1E551F6100EB5420 /* ProfileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileService.swift; path = Services/ProfileService.swift; sourceTree = "<group>"; };
+		F72BA8921E55473F00EB5420 /* ChatListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatListTableViewCell.swift; path = Views/Chat/ChatListTableViewCell.swift; sourceTree = "<group>"; };
+		F72BA8941E554BFC00EB5420 /* RoundedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedImage.swift; path = Views/RoundedImage.swift; sourceTree = "<group>"; };
+		F72BA8961E554EAA00EB5420 /* RoundedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedTextView.swift; path = Views/RoundedTextView.swift; sourceTree = "<group>"; };
 		F76297561E4BF24D005E617C /* RoundCornerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundCornerButton.swift; path = Views/RoundCornerButton.swift; sourceTree = "<group>"; };
 		F76297591E4BF2E9005E617C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		F762975D1E4BFB62005E617C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Release-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
@@ -169,8 +187,19 @@
 			isa = PBXGroup;
 			children = (
 				F72BA8801E52C2DB00EB5420 /* FirebaseService.swift */,
+				F72BA8821E52C6FE00EB5420 /* ChatService.swift */,
+				F72BA88E1E551F6100EB5420 /* ProfileService.swift */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		F72BA8881E551A5E00EB5420 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				F72BA88A1E551A8200EB5420 /* ChatDetailTableViewCell.swift */,
+				F72BA8921E55473F00EB5420 /* ChatListTableViewCell.swift */,
+			);
+			name = Chat;
 			sourceTree = "<group>";
 		};
 		F74E67C9C74412BAFB0C2977 /* Frameworks */ = {
@@ -219,6 +248,8 @@
 		F763D5751E4BE31B002BBC77 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F72BA8841E52C75B00EB5420 /* Message.swift */,
+				F72BA88C1E551E1600EB5420 /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -226,7 +257,11 @@
 		F763D5761E4BE320002BBC77 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F72BA8881E551A5E00EB5420 /* Chat */,
 				F76297561E4BF24D005E617C /* RoundCornerButton.swift */,
+				F72BA8861E52C9E800EB5420 /* AdjustableKeyboardViewController.swift */,
+				F72BA8941E554BFC00EB5420 /* RoundedImage.swift */,
+				F72BA8961E554EAA00EB5420 /* RoundedTextView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -599,15 +634,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				F72BA8731E52B4FE00EB5420 /* LoginViewController.swift in Sources */,
+				F72BA88F1E551F6100EB5420 /* ProfileService.swift in Sources */,
 				F76297671E4C0300005E617C /* Constants.swift in Sources */,
+				F72BA8951E554BFC00EB5420 /* RoundedImage.swift in Sources */,
 				F76297571E4BF24D005E617C /* RoundCornerButton.swift in Sources */,
+				F72BA8871E52C9E800EB5420 /* AdjustableKeyboardViewController.swift in Sources */,
+				F72BA8851E52C75B00EB5420 /* Message.swift in Sources */,
 				F72BA8791E52BDC700EB5420 /* ChatDetailViewController.swift in Sources */,
 				F72BA8711E52B22C00EB5420 /* RegisterViewController.swift in Sources */,
+				F72BA8931E55473F00EB5420 /* ChatListTableViewCell.swift in Sources */,
 				F72BA87E1E52BE9F00EB5420 /* ChatsListTableViewController.swift in Sources */,
+				F72BA88D1E551E1600EB5420 /* User.swift in Sources */,
 				F72BA8811E52C2DB00EB5420 /* FirebaseService.swift in Sources */,
 				F7CC70CC1E4BDB760009DFC8 /* AppDelegate.swift in Sources */,
 				F72BA8761E52B67000EB5420 /* Extensions.swift in Sources */,
+				F72BA88B1E551A8200EB5420 /* ChatDetailTableViewCell.swift in Sources */,
 				F72BA87C1E52BE3400EB5420 /* SettingsViewController.swift in Sources */,
+				F72BA8831E52C6FE00EB5420 /* ChatService.swift in Sources */,
+				F72BA8971E554EAA00EB5420 /* RoundedTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
