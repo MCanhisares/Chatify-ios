@@ -10,7 +10,7 @@ import UIKit
 
 class ChatListTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var profileImage: RoundedImage!
     @IBOutlet weak var profileName: UILabel!
     
     override func awakeFromNib() {

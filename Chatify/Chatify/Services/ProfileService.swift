@@ -12,11 +12,10 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class ProfileService: NSObject {
-    static let Uid = FIRAuth.auth()?.currentUser?.uid
     
     static var Users = [User]()
     
-    static func GetCurrentUser(uid: String) -> User? {
+    static func GetUser(uid: String) -> User? {
         if let i = Users.index(where: {$0.uid == uid}) {
             return Users[i]
         }
@@ -38,4 +37,54 @@ class ProfileService: NSObject {
             completion()
         })
     }
+    
+    static func GetUser(uid:String, completion: @escaping (_ user: User) -> Void) {
+        FirebaseService.DatabaseInstance.child("users").queryOrdered(byChild: "uid").queryEqual(toValue: uid).observe(.childAdded, with: { snapshot in
+            print(snapshot)
+            
+            if let result = snapshot.value as? [String: AnyObject] {
+                
+                let email = result["email"] as! String
+                let uid = result["uid"] as! String
+                let username = result["username"] as! String
+                let profileImageUrl = result["profileImageUrl"] as! String
+                
+                completion(User(userName: username, email: email, uid: uid, profileImageUrl: profileImageUrl))
+            }
+        })
+        
+    }
+    
+    static func AddUser(username: String, email: String) {
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        let post = ["uid": uid,
+                    "username": username,
+                    "email": email,
+                    "profileImageUrl": ""]
+        
+        FirebaseService.DatabaseInstance.child("users").child(uid!).setValue(post)
+    }
+    
+    
+    static func uploadPhoto(profileImage:UIImage, completion: @escaping (_ imageUrl: String) -> Void) {
+        let profileImageRef = FIRStorage.storage().reference().child("profileImages").child("\(NSUUID().uuidString).jpg")
+        
+        if let imageData = UIImageJPEGRepresentation(profileImage, 0.25) {
+            
+            profileImageRef.put(imageData, metadata: nil) {
+                metadata, error in
+                if error != nil {
+                    print(error)
+                } else {
+                    print(metadata)
+                    
+                    if let downloadUrl = metadata?.downloadURL()?.absoluteString {                                                FirebaseService.DatabaseInstance.child("users").child(FirebaseService.CurrentUser!.uid).updateChildValues(["profileImageUrl" : downloadUrl])                                                
+                        
+                        completion(downloadUrl)
+                    }
+                }
+            }
+        }
+    }
+    
 }

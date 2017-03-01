@@ -10,7 +10,7 @@ import UIKit
 
 class RegisterViewController: AdjustableKeyboardViewController, AdjustableKeyboardProtocol {
 
-    var originalBottomHeight: CGFloat = 150.0
+    var originalBottomHeight: CGFloat = (UIScreen.main.bounds.height / 2) - 100.0
     
     // MARK: Outlets
     

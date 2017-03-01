@@ -22,4 +22,19 @@ class User: NSObject {
         self.profileImageUrl = profileImageUrl
         super.init()
     }
+    
+    func getProfileImage() -> UIImage {
+        if let url = NSURL(string: profileImageUrl) {
+            if let data = NSData(contentsOf: url as URL) {
+                return UIImage(data: data as Data)!
+            }
+        }
+        return UIImage(named: "user")!
+    }
+    
+    func uploadProfilePhoto(profileImage: UIImage) {
+        ProfileService.uploadPhoto(profileImage: profileImage) { profileImageUrl in
+            self.profileImageUrl = profileImageUrl
+        }
+    }
 }

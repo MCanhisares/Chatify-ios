@@ -43,13 +43,7 @@ class ChatsListTableViewController: UITableViewController {
         let user = ProfileService.Users[indexPath.row]
         
         cell.profileName.text = user.userName
-        if user.profileImageUrl != "" {
-            
-        } else {
-            
-        }
-        
-        cell.profileImage.image = UIImage.init(named: "user")
+        cell.profileImage.image = user.getProfileImage()                
         
         // Configure the cell...
 

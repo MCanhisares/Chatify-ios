@@ -11,6 +11,7 @@ import UIKit
 class ChatDetailTableViewCell: UITableViewCell {
 
     @IBOutlet weak var messageText: RoundedTextView!
+    @IBOutlet weak var usernameText: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,6 +22,17 @@ class ChatDetailTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func display(message: Message) {
+        messageText.text = message.text
+        usernameText.text = message.username
+        
+        if message.username == FirebaseService.CurrentUser?.userName {
+            usernameText.textAlignment = .right
+        } else {
+            usernameText.textAlignment = .left
+        }
     }
 
 }

@@ -20,3 +20,6 @@ let kChatListToSettings = "chatListToSettings"
 
 let kChatListCellIdentifier = "chatListCell"
 let kChatDetailCellIdentifier = "chatDetailCell"
+
+
+let kChatHasNewMessage = "chatHasNewMessage"

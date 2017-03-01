@@ -14,7 +14,7 @@ class LoginViewController: AdjustableKeyboardViewController, AdjustableKeyboardP
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    var originalBottomHeight: CGFloat = 150.0
+    var originalBottomHeight: CGFloat = (UIScreen.main.bounds.height / 2) - 50.0
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -14,15 +14,14 @@ import FirebaseDatabase
 class ChatService: NSObject {
     static var Messages = [Message]()
     
-    static func FillMessages(uid: String, toId: String, completion: @escaping () -> Void) {
-        let allMessages = FirebaseService.DatabaseInstance.child("messages")
-        print(allMessages)
+    static func FillMessages(uid: String, toId: String, completion: @escaping () -> Void) {        
         
-        FirebaseService.DatabaseInstance.child("messages").queryOrdered(byChild: "uid").queryEqual(toValue: FirebaseService.CurrentUser?.uid).observe(.childAdded, with: { snapshot in
+        FirebaseService.DatabaseInstance.child("messages").observe(.childAdded, with: { snapshot in
             print(snapshot)
             if let result = snapshot.value as? [String: AnyObject] {
                 let toIdResponse = result["toId"] as! String
-                if toIdResponse == toId {
+                let fromIdResponse = result["uid"] as! String
+                if (toIdResponse == toId && fromIdResponse == uid) || (toIdResponse == uid && fromIdResponse == toId) {
                     
                     let message = Message(username: result["username"] as! String, text: result["text"] as! String, toId: result["toId"] as! String)
                     

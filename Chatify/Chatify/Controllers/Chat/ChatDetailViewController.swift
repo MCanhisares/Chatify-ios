@@ -42,6 +42,7 @@ class ChatDetailViewController: AdjustableKeyboardViewController, UITableViewDel
     }
     
     func setupTableView() {
+        self.title = selectedUser!.userName.uppercased()
         tableView.estimatedRowHeight = 88.0
         tableView.rowHeight = UITableViewAutomaticDimension
     }
@@ -79,14 +80,13 @@ class ChatDetailViewController: AdjustableKeyboardViewController, UITableViewDel
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kChatDetailCellIdentifier, for: indexPath) as! ChatDetailTableViewCell
         
-        
-        
         let messageText = cell.messageText!
         messageText.delegate = self
         cellHeight = Int(messageText.contentSize.height)
-        
+
         let message = ChatService.Messages[indexPath.row]
-        cell.messageText.text = message.text
+        
+        cell.display(message: message)
         
         return cell
     }
