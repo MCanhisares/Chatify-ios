@@ -27,12 +27,13 @@ class ProfileService: NSObject {
         FirebaseService.DatabaseInstance.child("users").observe(.childAdded, with: { snapshot in
             print(snapshot)
             if let result = snapshot.value as? [String: AnyObject] {
-                let uid = result["uid"] as! String
-                let username = result["username"] as! String
-                let email = result["email"] as! String
-                let profileImageUrl = result["profileImageUrl"] as! String
-                
-                ProfileService.Users.append(User(userName: username, email: email, uid: uid, profileImageUrl: profileImageUrl))
+                if let uid = result["uid"] as? String, uid != FirebaseService.CurrentUserUid{
+                    let username = result["username"] as! String
+                    let email = result["email"] as! String
+                    let profileImageUrl = result["profileImageUrl"] as! String
+                    
+                    ProfileService.Users.append(User(userName: username, email: email, uid: uid, profileImageUrl: profileImageUrl))
+                }
             }
             completion()
         })

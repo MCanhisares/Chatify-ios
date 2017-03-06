@@ -26,6 +26,7 @@
 		F72BA8931E55473F00EB5420 /* ChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BA8921E55473F00EB5420 /* ChatListTableViewCell.swift */; };
 		F72BA8951E554BFC00EB5420 /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BA8941E554BFC00EB5420 /* RoundedImage.swift */; };
 		F72BA8971E554EAA00EB5420 /* RoundedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BA8961E554EAA00EB5420 /* RoundedTextView.swift */; };
+		F732DBBA1E6D08B400F90FB8 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F732DBB91E6D08B400F90FB8 /* SplashViewController.swift */; };
 		F76297571E4BF24D005E617C /* RoundCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76297561E4BF24D005E617C /* RoundCornerButton.swift */; };
 		F762975A1E4BF2E9005E617C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76297581E4BF2E9005E617C /* Login.storyboard */; };
 		F76297611E4BFB62005E617C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F762975D1E4BFB62005E617C /* Alamofire.framework */; };
@@ -87,6 +88,7 @@
 		F72BA8921E55473F00EB5420 /* ChatListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatListTableViewCell.swift; path = Views/Chat/ChatListTableViewCell.swift; sourceTree = "<group>"; };
 		F72BA8941E554BFC00EB5420 /* RoundedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedImage.swift; path = Views/RoundedImage.swift; sourceTree = "<group>"; };
 		F72BA8961E554EAA00EB5420 /* RoundedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedTextView.swift; path = Views/RoundedTextView.swift; sourceTree = "<group>"; };
+		F732DBB91E6D08B400F90FB8 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplashViewController.swift; path = Controllers/Login/SplashViewController.swift; sourceTree = "<group>"; };
 		F76297561E4BF24D005E617C /* RoundCornerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundCornerButton.swift; path = Views/RoundCornerButton.swift; sourceTree = "<group>"; };
 		F76297591E4BF2E9005E617C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		F762975D1E4BFB62005E617C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Release-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			children = (
 				F72BA8721E52B4FE00EB5420 /* LoginViewController.swift */,
 				F72BA8701E52B22C00EB5420 /* RegisterViewController.swift */,
+				F732DBB91E6D08B400F90FB8 /* SplashViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -652,6 +655,7 @@
 				F72BA87C1E52BE3400EB5420 /* SettingsViewController.swift in Sources */,
 				F72BA8831E52C6FE00EB5420 /* ChatService.swift in Sources */,
 				F72BA8971E554EAA00EB5420 /* RoundedTextView.swift in Sources */,
+				F732DBBA1E6D08B400F90FB8 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

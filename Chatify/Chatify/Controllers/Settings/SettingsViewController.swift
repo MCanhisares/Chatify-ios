@@ -10,7 +10,7 @@ import UIKit
 
 class SettingsViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
-    @IBOutlet weak var profileImgView: RoundedImage!
+    @IBOutlet weak var profileImgView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,14 +24,16 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func getPhtoTouchUpInside(_ sender: Any) {
+
+    @IBAction func editSettingsButtonTap(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
         self.present(imagePicker, animated: true, completion: nil)
     }
     
-    @IBAction func uploadPhotoTouchUpInside(_ sender: Any) {
+    
+    func uploadProfileImage() {
         guard let image = profileImgView.image else {
             return
         }
@@ -48,17 +50,11 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
         let pickerInfo = info as NSDictionary
         let img: UIImage = pickerInfo.object(forKey: UIImagePickerControllerOriginalImage) as! UIImage
         profileImgView.image = img
+        
+        uploadProfileImage()
+        
         self.dismiss(animated: true, completion: nil)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

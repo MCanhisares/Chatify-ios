@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,44 +27,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uVP-A1-HuR" customClass="RoundedImage" customModule="Chatify" customModuleProvider="target">
-                                <rect key="frame" x="87.5" y="148" width="200" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uVP-A1-HuR">
+                                <rect key="frame" x="0.0" y="148" width="375" height="375"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="5zQ-gF-bZ4"/>
-                                    <constraint firstAttribute="width" constant="200" id="UXX-0Z-wrI"/>
+                                    <constraint firstAttribute="width" secondItem="uVP-A1-HuR" secondAttribute="height" multiplier="1:1" id="j26-er-GgF"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmq-ZC-ogQ">
-                                <rect key="frame" x="97" y="397" width="180" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="180" id="NRg-JY-mRJ"/>
-                                </constraints>
-                                <state key="normal" title="Get Photo"/>
-                                <connections>
-                                    <action selector="getPhtoTouchUpInside:" destination="u9m-wf-ca5" eventType="touchUpInside" id="ciD-Pe-IN1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcK-1b-5W8">
-                                <rect key="frame" x="97" y="445" width="180" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="180" id="9Cd-WJ-e0p"/>
-                                </constraints>
-                                <state key="normal" title="Update"/>
-                                <connections>
-                                    <action selector="uploadPhotoTouchUpInside:" destination="u9m-wf-ca5" eventType="touchUpInside" id="fhN-0N-3sr"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lmq-ZC-ogQ" firstAttribute="centerX" secondItem="VsB-ST-0Te" secondAttribute="centerX" id="VMM-wk-eH4"/>
-                            <constraint firstItem="lmq-ZC-ogQ" firstAttribute="top" secondItem="uVP-A1-HuR" secondAttribute="bottom" constant="49" id="Xuh-gP-eSQ"/>
-                            <constraint firstItem="uVP-A1-HuR" firstAttribute="centerX" secondItem="VsB-ST-0Te" secondAttribute="centerX" id="ffq-RV-qcT"/>
+                            <constraint firstItem="uVP-A1-HuR" firstAttribute="leading" secondItem="VsB-ST-0Te" secondAttribute="leading" id="O8a-xW-ZmR"/>
+                            <constraint firstAttribute="trailing" secondItem="uVP-A1-HuR" secondAttribute="trailing" id="XJj-hg-SGC"/>
                             <constraint firstItem="uVP-A1-HuR" firstAttribute="top" secondItem="2dH-fH-IvQ" secondAttribute="bottom" constant="84" id="iDD-Cf-25B"/>
-                            <constraint firstItem="dcK-1b-5W8" firstAttribute="centerX" secondItem="VsB-ST-0Te" secondAttribute="centerX" id="jBQ-J3-6mn"/>
-                            <constraint firstItem="dcK-1b-5W8" firstAttribute="top" secondItem="lmq-ZC-ogQ" secondAttribute="bottom" constant="18" id="kjZ-32-trL"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Settings" id="pZP-Lg-c34">
+                        <barButtonItem key="backBarButtonItem" title="Chat List" id="L1F-87-2AY"/>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="dlV-ji-ALB">
+                            <connections>
+                                <action selector="editSettingsButtonTap:" destination="u9m-wf-ca5" id="Xhi-ly-zi1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="profileImgView" destination="uVP-A1-HuR" id="P0K-kO-lpu"/>
                     </connections>
