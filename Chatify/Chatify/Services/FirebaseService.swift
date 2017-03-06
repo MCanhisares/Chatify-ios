@@ -15,6 +15,7 @@ class FirebaseService: NSObject {
     
     static let DatabaseInstance = FIRDatabase.database().reference()
     static var CurrentUser: User? = nil
+    static var CurrentUserUid: String?
     
     static func Login(email: String, password: String, completion: @escaping (_ success: Bool) -> Void) {
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { user, error in
@@ -23,6 +24,7 @@ class FirebaseService: NSObject {
                 completion(false)
             } else {
                 print(user)
+                FirebaseService.CurrentUserUid = user?.uid
                 ProfileService.GetUser(uid: user!.uid, completion: { user in
                     FirebaseService.CurrentUser = user
                     
@@ -39,6 +41,8 @@ class FirebaseService: NSObject {
                 completion(false)
                 return
             }
+            
+            FirebaseService.CurrentUserUid = user?.uid
             
             ProfileService.AddUser(username: username, email: email)
             

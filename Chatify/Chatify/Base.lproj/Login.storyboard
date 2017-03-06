@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="n4o-ld-yYk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rvM-y1-3Mi">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -32,7 +32,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="vCa-Ka-0fU">
-                                <rect key="frame" x="107.5" y="143" width="105.5" height="37"/>
+                                <rect key="frame" x="108" y="143" width="105.5" height="37"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lsp-bi-yvj">
                                         <rect key="frame" x="0.0" y="0.0" width="69.5" height="37"/>
@@ -105,12 +105,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rBo-K3-249" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="352.80000000000001" y="8.5457271364317844"/>
+            <point key="canvasLocation" x="1350" y="8.4507042253521121"/>
         </scene>
         <!--SplashViewController-->
         <scene sceneID="MrD-4c-SMb">
             <objects>
-                <viewController title="SplashViewController" id="n4o-ld-yYk" sceneMemberID="viewController">
+                <viewController title="SplashViewController" id="n4o-ld-yYk" customClass="SplashViewController" customModule="Chatify" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vfK-yl-ppA"/>
                         <viewControllerLayoutGuide type="bottom" id="reJ-xg-ibB"/>
@@ -123,7 +123,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFW-7w-hU9" customClass="RoundCornerButton" customModule="Chatify" customModuleProvider="target">
-                                <rect key="frame" x="30" y="349" width="120" height="50"/>
+                                <rect key="frame" x="30" y="348.5" width="120" height="50"/>
                                 <color key="backgroundColor" red="0.45326377699526527" green="0.47795307195466058" blue="0.7419933344530707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="Jgf-kq-mCK"/>
@@ -134,11 +134,11 @@
                                     <color key="titleColor" red="0.92549019607843142" green="0.96078431372549022" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="qRh-Z1-80h" kind="presentation" identifier="splashToLogin" id="4O7-fk-1ZK"/>
+                                    <segue destination="qRh-Z1-80h" kind="show" id="uuH-OY-RaS"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="1wq-4Z-YNF">
-                                <rect key="frame" x="108" y="236" width="105.5" height="37"/>
+                                <rect key="frame" x="107.5" y="235.5" width="105.5" height="37"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfF-X2-db4">
                                         <rect key="frame" x="0.0" y="0.0" width="69.5" height="37"/>
@@ -155,7 +155,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ieF-oD-NS4" customClass="RoundCornerButton" customModule="Chatify" customModuleProvider="target">
-                                <rect key="frame" x="170" y="349" width="120" height="50"/>
+                                <rect key="frame" x="170" y="348.5" width="120" height="50"/>
                                 <color key="backgroundColor" red="0.43227712835249282" green="0.73110738902159855" blue="0.58062485045394008" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="gXj-6S-Aej"/>
@@ -167,7 +167,7 @@
                                 </state>
                                 <connections>
                                     <action selector="loginBtnTouchUpInside:" destination="qRh-Z1-80h" eventType="touchUpInside" id="hNR-yO-0vX"/>
-                                    <segue destination="PSJ-v8-wpk" kind="presentation" identifier="splashToRegister" id="GFf-dO-Yw7"/>
+                                    <segue destination="PSJ-v8-wpk" kind="show" id="1Jm-A7-Xh9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -189,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9b-ET-faX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-412" y="8.5457271364317844"/>
+            <point key="canvasLocation" x="585" y="8.4507042253521121"/>
         </scene>
         <!--RegisterViewController-->
         <scene sceneID="djJ-SE-0bh">
@@ -207,7 +207,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="YAO-Jy-bOo">
-                                <rect key="frame" x="107.5" y="135" width="105.5" height="37"/>
+                                <rect key="frame" x="108" y="135" width="105.5" height="37"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqu-O0-aVH">
                                         <rect key="frame" x="0.0" y="0.0" width="69.5" height="37"/>
@@ -260,6 +260,7 @@
                                 </state>
                                 <connections>
                                     <action selector="btnRegisterTouchUpInside:" destination="PSJ-v8-wpk" eventType="touchUpInside" id="bDu-Zv-R3d"/>
+                                    <segue destination="wwS-lb-S6f" kind="presentation" identifier="registerToChatList" id="SU9-U2-9vm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -287,12 +288,11 @@
                         <outlet property="emailTextField" destination="xSL-Vb-0vn" id="QPM-qz-rw6"/>
                         <outlet property="passwordTextField" destination="3CE-R4-HU3" id="pNb-MJ-fWY"/>
                         <outlet property="usernameTextField" destination="iK5-xW-zNy" id="aNp-4s-eDP"/>
-                        <segue destination="wwS-lb-S6f" kind="presentation" identifier="registerToChatList" id="ev8-gF-ZhD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lxM-6O-qT5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-412" y="747"/>
+            <point key="canvasLocation" x="585" y="725"/>
         </scene>
         <!--Main-->
         <scene sceneID="LJY-IC-2YT">
@@ -300,13 +300,41 @@
                 <viewControllerPlaceholder storyboardName="Main" id="wwS-lb-S6f" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sR1-A4-tEc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1094.4000000000001" y="-78.260869565217391"/>
+            <point key="canvasLocation" x="2090.625" y="-79.225352112676063"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nBl-7e-lz4">
+            <objects>
+                <navigationController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" id="rvM-y1-3Mi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" id="0Kv-rr-fzX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="pBc-HM-1gQ">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="n4o-ld-yYk" kind="relationship" relationship="rootViewController" id="W1m-Rr-Eqf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="maA-nb-Dfl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-412.5" y="8.4507042253521121"/>
         </scene>
     </scenes>
     <resources>
         <image name="bg" width="640" height="1136"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ev8-gF-ZhD"/>
+        <segue reference="SU9-U2-9vm"/>
     </inferredMetricsTieBreakers>
 </document>
