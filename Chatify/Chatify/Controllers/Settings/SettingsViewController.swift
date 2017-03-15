@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class SettingsViewController: UIViewController, UINavigationControllerDelegate {
 
     @IBOutlet weak var profileImgView: UIImageView!
     
@@ -32,20 +32,14 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
         self.present(imagePicker, animated: true, completion: nil)
     }
     
-    
-    func uploadProfileImage() {
-        guard let image = profileImgView.image else {
-            return
-        }
-        FirebaseService.CurrentUser?.uploadProfilePhoto(profileImage: image)
-    }
-    
     func getCurrentProfilePicture() {
-        if let url = FirebaseService.CurrentUser?.profileImageUrl, url.characters.count > 0  {
-            profileImgView.image = FirebaseService.CurrentUser?.getProfileImage()
+        if let url = FirebaseService.sharedInstance.currentUser?.profileImageUrl, url.characters.count > 0  {
+            profileImgView.image = FirebaseService.sharedInstance.currentUser?.getProfileImage()
         }
      }
-    
+}
+
+extension SettingsViewController : UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let pickerInfo = info as NSDictionary
         let img: UIImage = pickerInfo.object(forKey: UIImagePickerControllerOriginalImage) as! UIImage
@@ -55,6 +49,11 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
         
         self.dismiss(animated: true, completion: nil)
     }
-
-
+    
+    func uploadProfileImage() {
+        guard let image = profileImgView.image else {
+            return
+        }
+        FirebaseService.sharedInstance.currentUser?.uploadProfilePhoto(profileImage: image)
+    }
 }

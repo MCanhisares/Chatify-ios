@@ -13,26 +13,28 @@ import FirebaseDatabase
 
 class ProfileService: NSObject {
     
-    static var Users = [User]()
+    static let sharedInstance = ProfileService()
     
-    static func GetUser(uid: String) -> User? {
-        if let i = Users.index(where: {$0.uid == uid}) {
-            return Users[i]
+    var users = [User]()
+    
+    func getUser(uid: String) -> User? {
+        if let i = users.index(where: {$0.uid == uid}) {
+            return users[i]
         }
         return nil
     }
     
-    static func FillUsers(completion: @escaping () -> Void) {
-        ProfileService.Users = []
-        FirebaseService.DatabaseInstance.child("users").observe(.childAdded, with: { snapshot in
+    func fillUsers(completion: @escaping () -> Void) {
+        self.users = []
+        FirebaseService.sharedInstance.databaseInstance.child("users").observe(.childAdded, with: { snapshot in
             print(snapshot)
             if let result = snapshot.value as? [String: AnyObject] {
-                if let uid = result["uid"] as? String, uid != FirebaseService.CurrentUserUid{
+                if let uid = result["uid"] as? String, uid != FirebaseService.sharedInstance.currentUserUid{
                     let username = result["username"] as! String
                     let email = result["email"] as! String
                     let profileImageUrl = result["profileImageUrl"] as! String
                     
-                    ProfileService.Users.append(User(userName: username, email: email, uid: uid, profileImageUrl: profileImageUrl))
+                    self.users.append(User(userName: username, email: email, uid: uid, profileImageUrl: profileImageUrl))
                 }
             }
             completion()
@@ -40,7 +42,7 @@ class ProfileService: NSObject {
     }
     
     static func GetUser(uid:String, completion: @escaping (_ user: User) -> Void) {
-        FirebaseService.DatabaseInstance.child("users").queryOrdered(byChild: "uid").queryEqual(toValue: uid).observe(.childAdded, with: { snapshot in
+        FirebaseService.sharedInstance.databaseInstance.child("users").queryOrdered(byChild: "uid").queryEqual(toValue: uid).observe(.childAdded, with: { snapshot in
             print(snapshot)
             
             if let result = snapshot.value as? [String: AnyObject] {
@@ -63,7 +65,7 @@ class ProfileService: NSObject {
                     "email": email,
                     "profileImageUrl": ""]
         
-        FirebaseService.DatabaseInstance.child("users").child(uid!).setValue(post)
+        FirebaseService.sharedInstance.databaseInstance.child("users").child(uid!).setValue(post)
     }
     
     
@@ -79,7 +81,10 @@ class ProfileService: NSObject {
                 } else {
                     print(metadata)
                     
-                    if let downloadUrl = metadata?.downloadURL()?.absoluteString {                                                FirebaseService.DatabaseInstance.child("users").child(FirebaseService.CurrentUser!.uid).updateChildValues(["profileImageUrl" : downloadUrl])                                                
+                    if let downloadUrl = metadata?.downloadURL()?.absoluteString {
+                        FirebaseService.sharedInstance.databaseInstance.child("users")
+                            .child(FirebaseService.sharedInstance.currentUser!.uid)
+                            .updateChildValues(["profileImageUrl" : downloadUrl])
                         
                         completion(downloadUrl)
                     }

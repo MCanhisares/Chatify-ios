@@ -11,6 +11,7 @@ import FirebaseAuth
 
 class LoginViewController: AdjustableKeyboardViewController, AdjustableKeyboardProtocol {
 
+    // MARK: Outlets
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -34,25 +35,12 @@ class LoginViewController: AdjustableKeyboardViewController, AdjustableKeyboardP
             return
         }
         
-        FirebaseService.Login(email: email, password: password, completion: { success in
+        FirebaseService.sharedInstance.login(email: email, password: password, completion: { success in
             if success {
                 self.performSegue(withIdentifier: kLoginToChatList, sender: sender)
             } else {
-                
+                //TODO HANDLE ERRORS
             }
         })
     }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

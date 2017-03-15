@@ -12,11 +12,14 @@ import Firebase
 import FirebaseDatabase
 
 class ChatService: NSObject {
-    static var Messages = [Message]()
     
-    static func FillMessages(uid: String, toId: String, completion: @escaping () -> Void) {        
+    static let sharedInstance = ChatService()
+    
+    var messages = [Message]()
+    
+    func fillMessages(uid: String, toId: String, completion: @escaping () -> Void) {
         
-        FirebaseService.DatabaseInstance.child("messages").observe(.childAdded, with: { snapshot in
+        FirebaseService.sharedInstance.databaseInstance.child("messages").observe(.childAdded, with: { snapshot in
             print(snapshot)
             if let result = snapshot.value as? [String: AnyObject] {
                 let toIdResponse = result["toId"] as! String
@@ -25,22 +28,22 @@ class ChatService: NSObject {
                     
                     let message = Message(username: result["username"] as! String, text: result["text"] as! String, toId: result["toId"] as! String)
                     
-                    ChatService.Messages.append(message)
+                    self.messages.append(message)
                 }
             }
             completion()
         })
     }
     
-    static func AddMessage(text: String, toId: String) {
-        let uid = FirebaseService.CurrentUser!.uid
-        let username = FirebaseService.CurrentUser!.userName
+    func addMessage(text: String, toId: String) {
+        let uid = FirebaseService.sharedInstance.currentUser!.uid
+        let username = FirebaseService.sharedInstance.currentUser!.userName
         
         let post = ["uid": uid,
                     "username" : username,
                     "text" : text,
                     "toId" : toId]
         
-        FirebaseService.DatabaseInstance.child("messages").childByAutoId().setValue(post)
+        FirebaseService.sharedInstance.databaseInstance.child("messages").childByAutoId().setValue(post)
     }
 }

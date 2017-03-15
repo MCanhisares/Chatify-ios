@@ -24,4 +24,8 @@ class ChatListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func configure(user: User) {
+        self.profileName.text = user.userName
+        self.profileImage.image = user.getProfileImage()
+    }
 }

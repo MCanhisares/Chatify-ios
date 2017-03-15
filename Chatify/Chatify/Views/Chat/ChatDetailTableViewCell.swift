@@ -28,11 +28,7 @@ class ChatDetailTableViewCell: UITableViewCell {
         messageText.text = message.text
         usernameText.text = message.username
         
-        if message.username == FirebaseService.CurrentUser?.userName {
-            usernameText.textAlignment = .right
-        } else {
-            usernameText.textAlignment = .left
-        }
+        usernameText.textAlignment = message.username == FirebaseService.sharedInstance.currentUser?.userName ? .right : .left
     }
 
 }

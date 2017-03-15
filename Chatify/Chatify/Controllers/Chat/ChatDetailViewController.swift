@@ -8,11 +8,11 @@
 
 import UIKit
 
-class ChatDetailViewController: AdjustableKeyboardViewController, UITableViewDelegate, UITableViewDataSource, AdjustableKeyboardProtocol {
+class ChatDetailViewController: AdjustableKeyboardViewController, UITableViewDelegate, AdjustableKeyboardProtocol {
 
     var selectedUser: User?
     
-    var firstLoad: Bool = true
+    private var firstLoad: Bool = true
     
     var originalBottomHeight: CGFloat = 8.0
     var cellHeight = 44
@@ -38,7 +38,18 @@ class ChatDetailViewController: AdjustableKeyboardViewController, UITableViewDel
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        ChatService.Messages = []
+        ChatService.sharedInstance.messages = []
+    }
+    
+    
+    @IBAction func sendButtonTouchUpInside(_ sender: Any) {
+        guard let message = inputTextField.text, message.characters.count > 0 else {
+            return
+        }
+        
+        sendMessage(text: message)
+        
+        self.inputTextField.text = ""
     }
     
     func setupTableView() {
@@ -48,7 +59,7 @@ class ChatDetailViewController: AdjustableKeyboardViewController, UITableViewDel
     }
     
     func getMessages() {
-        ChatService.FillMessages(uid: FirebaseService.CurrentUser!.uid, toId: selectedUser!.uid) { result in
+        ChatService.sharedInstance.fillMessages(uid: FirebaseService.sharedInstance.currentUser!.uid, toId: selectedUser!.uid) { result in
             self.tableView.reloadData()
             self.tableViewScrollToBottom(animated: !self.firstLoad)
             self.firstLoad = false
@@ -56,50 +67,12 @@ class ChatDetailViewController: AdjustableKeyboardViewController, UITableViewDel
     }
     
     func sendMessage(text: String) {
-        ChatService.AddMessage(text: text, toId: selectedUser!.uid)
+        ChatService.sharedInstance.addMessage(text: text, toId: selectedUser!.uid)
     }
     
     override func addObservers() {
         super.addObservers()
         NotificationCenter.default.addObserver(self, selector: #selector(self.scrollToBottom), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-    }
-    
-    // MARK: - Table view data source
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return ChatService.Messages.count
-    }
-    
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: kChatDetailCellIdentifier, for: indexPath) as! ChatDetailTableViewCell
-        
-        let messageText = cell.messageText!
-        messageText.delegate = self
-        cellHeight = Int(messageText.contentSize.height)
-
-        let message = ChatService.Messages[indexPath.row]
-        
-        cell.display(message: message)
-        
-        return cell
-    }
-    
-
-    @IBAction func sendButtonTouchUpInside(_ sender: Any) {
-        guard let message = inputTextField.text, message.characters.count > 0 else {
-            return
-        }
-        
-        sendMessage(text: message)
-        
-        self.inputTextField.text = ""
     }
     
     func scrollToBottom() {
@@ -116,6 +89,31 @@ class ChatDetailViewController: AdjustableKeyboardViewController, UITableViewDel
                 self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: animated)
             }
         }
+    }
+}
+
+extension ChatDetailViewController: UITableViewDataSource {
+    // MARK: - Table view data source
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return ChatService.sharedInstance.messages.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: kChatDetailCellIdentifier, for: indexPath) as! ChatDetailTableViewCell
+        
+        cell.display(message: ChatService.sharedInstance.messages[indexPath.row])
+        
+        cell.messageText!.delegate = self
+        cellHeight = Int(cell.messageText!.contentSize.height)
+        
+        return cell
     }
 }
 

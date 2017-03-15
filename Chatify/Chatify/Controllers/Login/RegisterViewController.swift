@@ -40,22 +40,13 @@ class RegisterViewController: AdjustableKeyboardViewController, AdjustableKeyboa
             return
         }
         
-        FirebaseService.CreateAccount(email: email, password: password, username: username) { (success) in
+        FirebaseService.sharedInstance.createAccount(email: email, password: password, username: username) { (success) in
             if success {
                 self.performSegue(withIdentifier: kRegisterToChatList, sender: sender)
+            } else {
+                //TODO HANDLE ERRORS
             }
         }
         
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

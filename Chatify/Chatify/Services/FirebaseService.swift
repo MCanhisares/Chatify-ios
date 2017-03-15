@@ -13,20 +13,22 @@ import FirebaseAuth
 
 class FirebaseService: NSObject {
     
-    static let DatabaseInstance = FIRDatabase.database().reference()
-    static var CurrentUser: User? = nil
-    static var CurrentUserUid: String?
+    static let sharedInstance = FirebaseService()
     
-    static func Login(email: String, password: String, completion: @escaping (_ success: Bool) -> Void) {
+    let databaseInstance = FIRDatabase.database().reference()
+    var currentUser: User? = nil
+    var currentUserUid: String?
+    
+    func login(email: String, password: String, completion: @escaping (_ success: Bool) -> Void) {
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { user, error in
             if let err = error {
                 print(err.localizedDescription)
                 completion(false)
             } else {
                 print(user)
-                FirebaseService.CurrentUserUid = user?.uid
+                self.currentUserUid = user?.uid
                 ProfileService.GetUser(uid: user!.uid, completion: { user in
-                    FirebaseService.CurrentUser = user
+                    self.currentUser = user
                     
                     completion(true)
                 })
@@ -34,7 +36,7 @@ class FirebaseService: NSObject {
         })
     }
     
-    static func CreateAccount(email: String, password: String, username: String, completion: @escaping (_ success: Bool) -> Void) {
+    func createAccount(email: String, password: String, username: String, completion: @escaping (_ success: Bool) -> Void) {
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
             if error != nil {
                 print(error?.localizedDescription)
@@ -42,11 +44,11 @@ class FirebaseService: NSObject {
                 return
             }
             
-            FirebaseService.CurrentUserUid = user?.uid
+            self.currentUserUid = user?.uid
             
             ProfileService.AddUser(username: username, email: email)
             
-            FirebaseService.Login(email: email, password: password, completion: { (success) in
+            self.login(email: email, password: password, completion: { (success) in
                 if success {
                     print("Login successful")
                 } else {
